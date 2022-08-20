@@ -12,25 +12,24 @@ FillArr(array, min, max);
 Write("[");
 PrintArr(array);
 WriteLine("]");
-int a = 0;
-for(int i=0; i < array.Length; i++)
-{
-    if (i % 2 != 0)
-    {
-        a = a + array [i];
-    }
-}
-WriteLine($"Суммa элементов стоящих на нечётной позиции массива равнв {a}");
+WriteLine($"Суммa элементов стоящих на нечётной позиции массива равна {SumNamberOddPosition(array)}");
 
 
-// Задать массив
-void FillArr(int[] arr, int minValue, int maxValue)
+// Сумма элементов стоящих на нечетной позиции
+int SumNamberOddPosition (int[] arr)
 {
-    for (int i=0; i<arr.Length; i++)
+    int sum = 0;
+    for(int i=0; i < arr.Length; i++)
     {
-        arr [i] = new Random().Next(minValue, maxValue+1);
+        if (i % 2 != 0)
+        sum = sum + arr [i];
     }
+return sum;
 }
+
+
+
+
 // Печать массива
 void PrintArr(int [] arr)
 {
@@ -38,5 +37,13 @@ void PrintArr(int [] arr)
     {
         Write($"{arr [i]}");
         if (i<arr.Length-1) Write (",");
+    }
+}
+// Задать массив
+void FillArr(int[] arr, int minValue, int maxValue)
+{
+    for (int i=0; i<arr.Length; i++)
+    {
+        arr [i] = new Random().Next(minValue, maxValue+1);
     }
 }
