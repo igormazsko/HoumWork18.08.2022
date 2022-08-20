@@ -8,19 +8,24 @@ FillArr(array);
 Write("[");
 PrintArr(array);
 WriteLine("]");
-int a = 0;
-for(int i=0; i<n; i++)
+WriteLine($"Количество четных чисел - {QuantityEven(array)}");
+
+// Метод подсчет четных
+int QuantityEven(int[] arr)
 {
-    if(array[i]%2==0)
+    int a = 0;
+    for(int i=0; i<n; i++)
     {
-        a = a + 1;
+        if(array[i]%2==0)
+        {
+            a = a + 1;
+        }
+        a = a + 0;
     }
-    a = a + 0;
+return a;
 }
-WriteLine($"Количество четных чисел - {a}");
 
-
-// Задать массив
+// Методз задать массив
 void FillArr(int[] arr)
 {
     for (int i=0; i<arr.Length; i++)
@@ -28,7 +33,8 @@ void FillArr(int[] arr)
         arr [i] = new Random().Next(100, 1000);
     }
 }
-// Печать массива
+
+// Метод печать массива
 void PrintArr(int [] arr)
 {
     for (int i=0; i<arr.Length; i++)
